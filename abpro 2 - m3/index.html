@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Asignación Familiar</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Informe de Asignación Familiar</h1>
+        <form id="informeForm">
+            <label for="esCargaFamiliar">Es carga familiar:</label>
+            <select id="esCargaFamiliar">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="anioNacimiento">Año de nacimiento:</label>
+            <input type="number" id="anioNacimiento" oninput="actualizarRangoEtario()">
+            
+            <label for="mesNacimiento">Mes de nacimiento:</label>
+            <input type="number" id="mesNacimiento" min="1" max="12">
+            
+            <label for="anioIngreso">Año de ingreso (si es trabajador activo):</label>
+            <input type="number" id="anioIngreso">
+            
+            <label for="mesIngreso">Mes de ingreso (si es trabajador activo):</label>
+            <input type="number" id="mesIngreso" min="1" max="12">
+            
+            <label for="rangoEtario">Rango etario:</label>
+            <label id="rangoEtarioLabel"></label>
+            
+            <button type="button" onclick="generarInforme()">Generar Informe</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
